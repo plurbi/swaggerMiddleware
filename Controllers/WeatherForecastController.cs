@@ -24,6 +24,7 @@ namespace swaggerMiddleware.Controllers
         }
 
         [HttpGet]
+        [Route("wheater")]
         public IEnumerable<WeatherForecast> Get()
         {
             var rng = new Random();
@@ -34,6 +35,14 @@ namespace swaggerMiddleware.Controllers
                 Summary = Summaries[rng.Next(Summaries.Length)]
             })
             .ToArray();
+        }
+        [HttpGet]
+        [Route("getPersona")]
+        public PersonaDTO GetPersona(){
+            return new PersonaDTO() {
+                Id =1,
+                Name="Patricio"
+            };
         }
     }
 }
